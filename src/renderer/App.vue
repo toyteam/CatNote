@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <main-page></main-page>
   </div>
 </template>
 
 <script>
+  import MainPage from './components/MainPage'
   export default {
-    name: 'catnote'
+    name: 'catnote',
+    components: {
+      'MainPage': MainPage
+    }
   }
 </script>
 

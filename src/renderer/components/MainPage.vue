@@ -6,16 +6,10 @@
           <div class="layout-logo"></div>
           <div class="layout-nav">
             <MenuItem name="1">
-              <Icon type="ios-navigate"></Icon>Item 1
+              <Input suffix="ios-search" placeholder="Enter text" style="width: auto"/>
             </MenuItem>
             <MenuItem name="2">
-              <Icon type="ios-keypad"></Icon>Item 2
-            </MenuItem>
-            <MenuItem name="3">
-              <Icon type="ios-analytics"></Icon>Item 3
-            </MenuItem>
-            <MenuItem name="4">
-              <Icon type="ios-paper"></Icon>Item 4
+              <Avatar icon="ios-person"/>
             </MenuItem>
           </div>
         </Menu>
@@ -24,32 +18,42 @@
         <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
           <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
-              <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
-                <Submenu name="1">
-                  <template slot="title">
-                    <Icon type="ios-navigate"></Icon>Item 1
-                  </template>
-                  <MenuItem name="1-1">Option 1</MenuItem>
-                  <MenuItem name="1-2">Option 2</MenuItem>
-                  <MenuItem name="1-3">Option 3</MenuItem>
-                </Submenu>
-                <Submenu name="2">
-                  <template slot="title">
-                    <Icon type="ios-keypad"></Icon>Item 2
-                  </template>
-                  <MenuItem name="2-1">Option 1</MenuItem>
-                  <MenuItem name="2-2">Option 2</MenuItem>
-                </Submenu>
-                <Submenu name="3">
-                  <template slot="title">
-                    <Icon type="ios-analytics"></Icon>Item 3
-                  </template>
-                  <MenuItem name="3-1">Option 1</MenuItem>
-                  <MenuItem name="3-2">Option 2</MenuItem>
-                </Submenu>
+              <Menu theme="light" active-name="1">
+                <MenuGroup title="My Library">
+                  <MenuItem name="alldoc">
+                    <Icon type="md-document" />
+                    All Documents
+                  </MenuItem>
+                  <MenuItem name="recentadd">
+                    <Icon type="md-chatbubbles" />
+                    Recent Added
+                  </MenuItem>
+                  <MenuItem name="favorites">
+                    <Icon type="md-heart" />
+                    Favorites
+                  </MenuItem>
+                </MenuGroup>
+                <MenuGroup title="Groups">
+                  <MenuItem name="xxx">
+                    <Icon type="md-heart" />
+                    first group
+                  </MenuItem>
+                </MenuGroup>
+                <MenuGroup title="Trash">
+                  <MenuItem name="recentdeleted">
+                    <Icon type="md-leaf" />
+                    Recent deleted
+                  </MenuItem>
+                  <MenuItem name="alldeleted">
+                    <Icon type="md-heart" />
+                    All deleted documents
+                  </MenuItem>
+                </MenuGroup>
               </Menu>
             </Sider>
-            <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">Content</Content>
+            <Content :style="{padding: '24px 24px 24px 64px', minHeight: '280px', background: '#fff'}">
+              <router-view name="content"></router-view>
+            </Content>
           </Layout>
         </Content>
       </Layout>
@@ -59,7 +63,12 @@
 </template>
 <script>
 export default {
-  name: 'main-page'
+  name: 'main-page',
+  data: function () {
+    return {}
+  },
+  methods: {
+  }
 }
 </script>
 
