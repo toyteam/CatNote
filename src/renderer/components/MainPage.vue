@@ -57,7 +57,6 @@
           </Layout>
         </Content>
       </Layout>
-      <Footer class="layout-footer-center">2018 &copy; CatNote</Footer>
     </Layout>
   </div>
 </template>
@@ -79,6 +78,7 @@ export default {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
+  height: 100%;
 }
 .layout-logo {
   width: 100px;
@@ -94,8 +94,5 @@ export default {
   width: 420px;
   margin: 0 auto;
   margin-right: 20px;
-}
-.layout-footer-center {
-  text-align: center;
 }
 </style>

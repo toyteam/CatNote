@@ -11,7 +11,7 @@
       </ButtonGroup>
     </row>
     <row>
-      <Table ref="selection" height="400" :columns="columns" :data="data"></Table>
+      <Table ref="selection" height="350" :columns="columns" :data="data"></Table>
     </row>
   </div>
 </template>
@@ -32,12 +32,12 @@ export default {
           sortable: true
         },
         {
-          title: 'Modify Time',
+          title: 'Time Modified',
           key: 'modifytime',
           sortable: true
         },
         {
-          title: 'Create Time',
+          title: 'Time Created',
           key: 'createtime',
           sortable: true
         },
