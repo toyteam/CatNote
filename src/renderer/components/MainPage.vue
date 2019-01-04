@@ -9,6 +9,11 @@
               <Input suffix="ios-search" placeholder="Enter text" style="width: auto"/>
             </MenuItem>
             <MenuItem name="2">
+              <Badge :count="100" :offset="[14,-5]">
+                <Icon type="ios-notifications-outline" size="26"></Icon>
+              </Badge>
+            </MenuItem>
+            <MenuItem name="3">
               <Avatar icon="ios-person"/>
             </MenuItem>
           </div>

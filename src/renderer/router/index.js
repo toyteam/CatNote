@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-Vue.use(Router)
+import iView from 'iview'
 
-export default new Router({
+Vue.use(Router)
+Vue.use(iView)
+
+var router = new Router({
   routes: [
     {
       path: '/',
@@ -24,3 +27,14 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  iView.LoadingBar.start()
+  next()
+})
+
+router.afterEach(route => {
+  iView.LoadingBar.finish()
+})
+
+export default router
