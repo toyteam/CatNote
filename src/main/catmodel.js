@@ -1,6 +1,6 @@
 
-var SqliteDB = require('./catdb.js').SqliteDB
+var sqlite3 = require('sqlite3')
 
-var file = 'Gis1.db'
+export function getAllDocuments (connection) {
 
-var sqliteDB = new SqliteDB(file)
+}

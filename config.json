@@ -1,1 +1,1 @@
-libraries=main.db
+libraries=./example/testlib/main.db

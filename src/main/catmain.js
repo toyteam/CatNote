@@ -1,12 +1,14 @@
 var fs = require('fs')
 var querystring = require('querystring')
 var catconfig = require('./catconfig')
+var catlibrary = require('./catlibrary')
 
 var configPath = './config.json'
 
 var config = new catconfig.Config()
 
 export function main () {
+  // get config
   var exist = fs.existsSync(configPath)
   if (!exist) {
     console.log('Creating setting file!')
@@ -24,4 +26,10 @@ export function main () {
       config = data
     })
   }
+  // load library
+  var mainLib = new catlibrary.Library()
+  if (config.libraries.length > 0) {
+    mainLib.setDatabasePath(config.libraries[0])
+  }
+  mainLib.openLibrary()
 }
