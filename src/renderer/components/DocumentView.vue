@@ -1,11 +1,11 @@
 <template>
   <Layout>
-    <Sider hide-trigger :style="{background: '#fff'}" width='330px'>
+    <Sider hide-trigger :style="{background: '#fff'}" width='280px'>
       <Tabs class="infotab">
         <TabPane label="Details" icon="ios-book">
           <Form :model="infoForm">
             <FormItem label="ContentType">
-              <Select v-model="infoForm.contentType" style="width:300px">
+              <Select v-model="infoForm.contentType" style="width:250px">
                 <Option
                   v-for="item in infoForm.contentTypeList"
                   :value="item.value"
