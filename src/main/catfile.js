@@ -1,4 +1,5 @@
 import { dialog } from 'electron'
+
 export function addFile (menuItem, browserWindow, event) {
   dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] })
 }
