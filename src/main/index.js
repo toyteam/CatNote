@@ -1,6 +1,8 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Menu } from 'electron'
+
+import { addFile, addFolder } from './catfile'
 
 /**
  * Set `__static` path to static files in production
@@ -14,6 +16,35 @@ let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
+
+var catnoteMenubarTemplate = [
+  {
+    label: 'File',
+    submenu: [
+      {
+        label: 'Add File',
+        click: addFile
+      },
+      {
+        label: 'Add Folder',
+        click: addFolder
+      },
+      { type: 'separator' },
+      {
+        label: 'Exit',
+        role: 'quit'
+      }]
+  },
+  {
+    label: 'Edit'
+  },
+  {
+    label: 'View'
+  },
+  {
+    label: 'Help',
+    role: 'help'
+  }]
 
 function createWindow () {
   /**
@@ -33,6 +64,9 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
+  const menu = Menu.buildFromTemplate(catnoteMenubarTemplate)
+  Menu.setApplicationMenu(menu)
 }
 
 app.on('ready', createWindow)
