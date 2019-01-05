@@ -1,15 +1,20 @@
 <template>
-  <div class="document-list">
-    <row class="document-list-header">
-      <ButtonGroup>
-        <Button type="primary">
-            <Icon type="ios-star"></Icon>
-        </Button>
-        <Button type="primary">
-            <Icon type="ios-trash"></Icon>
-        </Button>
-      </ButtonGroup>
-    </row>
+  <div>
+    <Affix :offset-top="50">
+      <row>
+        <ButtonGroup>
+          <Button>
+              <Icon type="ios-add-circle-outline"></Icon>
+          </Button>
+          <Button>
+              <Icon type="ios-star"></Icon>
+          </Button>
+          <Button>
+              <Icon type="ios-trash"></Icon>
+          </Button>
+        </ButtonGroup>
+      </row>
+    </Affix>
     <row>
       <Table ref="selection" height="350" :columns="columns" :data="data"></Table>
     </row>
@@ -32,16 +37,6 @@ export default {
           sortable: true
         },
         {
-          title: 'Time Modified',
-          key: 'modifytime',
-          sortable: true
-        },
-        {
-          title: 'Time Created',
-          key: 'createtime',
-          sortable: true
-        },
-        {
           title: 'Type',
           key: 'type',
           sortable: true
@@ -55,15 +50,11 @@ export default {
       data: [
         {
           name: 'test',
-          modifytime: '2018-12-31',
-          createtime: '2018-10-19',
           type: 'pdf',
           size: '1200'
         },
         {
           name: 'test2',
-          modifytime: '2018-12-31',
-          createtime: '2018-10-19',
           type: 'pdf',
           size: '1200'
         }
@@ -71,6 +62,9 @@ export default {
     }
   },
   methods: {
+    rowDoubleClick (rowData, index) {
+      console.log(index)
+    }
   }
 }
 </script>

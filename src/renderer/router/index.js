@@ -10,10 +10,10 @@ var router = new Router({
   routes: [
     {
       path: '/',
-      name: 'document-list',
+      name: 'all-documents',
       components: {
-        default: require('@/components/DocumentList').default,
-        content: require('@/components/DocumentList').default
+        default: require('@/components/AllDocuments').default,
+        content: require('@/components/AllDocuments').default
       }
     },
     {
