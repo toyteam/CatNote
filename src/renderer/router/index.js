@@ -17,6 +17,14 @@ var router = new Router({
       }
     },
     {
+      path: '/reader',
+      name: 'reader',
+      components: {
+        default: require('@/components/AllDocuments').default,
+        content: require('@/components/ReaderView').default
+      }
+    },
+    {
       path: '/landingpage',
       name: 'landing-page',
       component: require('@/components/LandingPage').default

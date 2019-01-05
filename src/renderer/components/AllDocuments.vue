@@ -104,7 +104,7 @@ export default {
   methods: {
     rowDoubleClick (rowData, index) {
       console.log(index)
-      this.showInfo = true
+      this.$router.push('reader')
     }
   }
 }
