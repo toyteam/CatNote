@@ -10,17 +10,17 @@ var router = new Router({
   routes: [
     {
       path: '/',
-      name: 'all-documents',
+      name: 'document-view',
       components: {
-        default: require('@/components/AllDocuments').default,
-        content: require('@/components/AllDocuments').default
+        default: require('@/components/DocumentView').default,
+        content: require('@/components/DocumentView').default
       }
     },
     {
       path: '/reader',
       name: 'reader',
       components: {
-        default: require('@/components/AllDocuments').default,
+        default: require('@/components/ReaderView').default,
         content: require('@/components/ReaderView').default
       }
     },

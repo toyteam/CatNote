@@ -13,53 +13,31 @@
                 <Icon type="ios-notifications-outline" size="26"></Icon>
               </Badge>
             </MenuItem>
-            <MenuItem name="3">
-              <Avatar icon="ios-person"/>
-            </MenuItem>
+            <Submenu name="3">
+              <template slot="title">
+                <Icon type="md-person" />
+              </template>
+              <MenuGroup title="Document">
+                <MenuItem name="1-1">All Documents</MenuItem>
+                <MenuItem name="1-2">Recent Documents</MenuItem>
+                <MenuItem name="1-4">Group View</MenuItem>
+                <MenuItem name="1-3">Favorites</MenuItem>
+              </MenuGroup>
+              <MenuGroup title="Trash">
+                <MenuItem name="2-1">All deleted</MenuItem>
+                <MenuItem name="2-2">History deleted</MenuItem>
+              </MenuGroup>
+              <MenuGroup title="Account">
+                <MenuItem name="3-1">Settings</MenuItem>
+                <MenuItem name="3-1">Exit</MenuItem>
+              </MenuGroup>
+            </Submenu>
           </div>
         </Menu>
       </Header>
       <Layout :style="{padding: '0 50px'}">
         <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
-          <Layout>
-            <Sider hide-trigger :style="{background: '#fff'}">
-              <Menu theme="light" active-name="1">
-                <MenuGroup title="My Library">
-                  <MenuItem name="alldoc">
-                    <Icon type="md-document" />
-                    All Documents
-                  </MenuItem>
-                  <MenuItem name="recentadd">
-                    <Icon type="md-chatbubbles" />
-                    Recent Added
-                  </MenuItem>
-                  <MenuItem name="favorites">
-                    <Icon type="md-heart" />
-                    Favorites
-                  </MenuItem>
-                </MenuGroup>
-                <MenuGroup title="Groups">
-                  <MenuItem name="xxx">
-                    <Icon type="md-heart" />
-                    first group
-                  </MenuItem>
-                </MenuGroup>
-                <MenuGroup title="Trash">
-                  <MenuItem name="recentdeleted">
-                    <Icon type="md-leaf" />
-                    Recent deleted
-                  </MenuItem>
-                  <MenuItem name="alldeleted">
-                    <Icon type="md-heart" />
-                    All deleted documents
-                  </MenuItem>
-                </MenuGroup>
-              </Menu>
-            </Sider>
-            <Content :style="{padding: '24px 24px 24px 64px', minHeight: '280px', background: '#fff'}">
-              <router-view name="content"></router-view>
-            </Content>
-          </Layout>
+          <router-view name="content"></router-view>
         </Content>
       </Layout>
     </Layout>
@@ -71,8 +49,7 @@ export default {
   data: function () {
     return {}
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 
