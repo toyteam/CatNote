@@ -126,6 +126,6 @@ export default {
   padding: 12px;
 }
 .infotab{
-  padding:12px;
+  margin:12px;
 }
 </style>
