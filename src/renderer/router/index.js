@@ -9,16 +9,28 @@ Vue.use(iView)
 var router = new Router({
   routes: [
     {
-      path: '/',
-      name: 'document-view',
+      path: '/', redirect: '/library'
+    },
+    {
+      path: '/library',
+      name: 'library',
       components: {
         default: require('@/components/DocumentView').default,
-        content: require('@/components/DocumentView').default
+        sidepanel: require('@/components/LibraryPanel').default,
+        content: require('@/components/ReaderView').default
       }
     },
     {
-      path: '/reader',
-      name: 'reader',
+      path: '/search',
+      name: 'search',
+      components: {
+        default: require('@/components/ReaderView').default,
+        content: require('@/components/ReaderView').default
+      }
+    },
+    {
+      path: '/setting',
+      name: 'setting',
       components: {
         default: require('@/components/ReaderView').default,
         content: require('@/components/ReaderView').default
