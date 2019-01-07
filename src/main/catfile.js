@@ -1,9 +1,17 @@
 import { dialog } from 'electron'
 
-export function addFile (menuItem, browserWindow, event) {
+export function newLibrary (menuItem, browserWindow, event) {
+  dialog.showOpenDialog({ properties: ['openDirectory', 'multiSelections'] })
+}
+
+export function addLibrary (menuItem, browserWindow, event) {
+  dialog.showOpenDialog({ properties: ['openDirectory', 'multiSelections'] })
+}
+
+export function importFile (menuItem, browserWindow, event) {
   dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] })
 }
 
-export function addFolder (menuItem, browserWindow, event) {
+export function importFolder (menuItem, browserWindow, event) {
   dialog.showOpenDialog({ properties: ['openDirectory', 'multiSelections'] })
 }

@@ -22,12 +22,23 @@ var catnoteMenubarTemplate = [
     label: 'File',
     submenu: [
       {
-        label: 'Add File',
+        label: 'New',
         click: catfile.addFile
       },
       {
-        label: 'Add Folder',
-        click: catfile.addFolder
+        label: 'Add Library',
+        click: catfile.addLibrary
+      },
+      {
+        label: 'Import',
+        submenu: [{
+          label: 'Add File',
+          click: catfile.importFile
+        },
+        {
+          label: 'Add Folder',
+          click: catfile.importFolder
+        }]
       },
       { type: 'separator' },
       {
