@@ -17,23 +17,23 @@ var router = new Router({
       components: {
         default: require('@/components/DocumentView').default,
         sidepanel: require('@/components/LibraryPanel').default,
-        content: require('@/components/ReaderView').default
+        mainview: require('@/components/LibraryView').default
       }
     },
     {
       path: '/search',
       name: 'search',
       components: {
-        default: require('@/components/ReaderView').default,
-        content: require('@/components/ReaderView').default
+        default: require('@/components/ReferenceView').default,
+        content: require('@/components/ReferenceView').default
       }
     },
     {
       path: '/setting',
       name: 'setting',
       components: {
-        default: require('@/components/ReaderView').default,
-        content: require('@/components/ReaderView').default
+        default: require('@/components/ReferenceView').default,
+        content: require('@/components/ReferenceView').default
       }
     },
     {

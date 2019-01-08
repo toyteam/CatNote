@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'reader-view',
+  name: 'reference-view',
   data: function () {
     return {
       pages: [{

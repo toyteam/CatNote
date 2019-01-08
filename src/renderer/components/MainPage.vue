@@ -4,7 +4,7 @@
       <!--<header></header>-->
       <Layout :style="{padding: '0px', height: '100%'}">
         <Sider hide-trigger width=58>
-            <Menu active-name="1-2" theme="dark" width="auto" class="sidebar-menu">
+            <Menu active-name="1-1" theme="dark" width="auto" class="sidebar-menu">
               <router-link to="/library">
                 <MenuItem name="1-1">
                     <Icon type="ios-book" size=28></Icon>
@@ -23,12 +23,12 @@
             </Menu>
         </Sider>
         <Content :style="{padding: '0px', minHeight: '280px', background: '#fff'}">
-          <Split v-model="split">
-            <div slot="left" class="demo-split-pane">
+          <Split v-model="split" :min=0.2 :max=0.2>
+            <div slot="left">
               <router-view name="sidepanel"></router-view>
             </div>
-            <div slot="right" class="demo-split-pane">
-              <router-view name="content"></router-view>
+            <div slot="right" style="height:100%" ref="rightpanel">
+              <router-view name="mainview" :height='height'></router-view>
             </div>
           </Split>
         </Content>
@@ -41,8 +41,18 @@ export default {
   name: 'main-page',
   data: function () {
     return {
-      split: 0.2
+      split: 0.2,
+      height: 0
     }
+  },
+  mounted: function () {
+    this.$nextTick(function () {
+      this.height = this.$refs.rightpanel.offsetHeight
+      var that = this
+      window.onresize = function temp () {
+        that.height = that.$refs.rightpanel.offsetHeight
+      }
+    })
   },
   methods: {}
 }
