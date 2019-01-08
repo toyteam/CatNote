@@ -1,5 +1,5 @@
 <template>
-    <Tabs type="card" closable @on-tab-remove="handleTabRemove">
+    <Tabs type="card" @on-tab-remove="handleTabRemove">
         <TabPane v-for="item in pages" v-bind:key="item.title" :label="item.title">
           {{item.path}}
         </TabPane>
